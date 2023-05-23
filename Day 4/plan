@@ -1,0 +1,15 @@
+
+0. create s3 bucking and upload the page
+1. how to connect ec2 to s3 using some script ?
+2. write an initialization to the private ec2
+    a. install apache
+    b. edit configuration so it will fetch required webpages from the s3
+3. make the template for the private ec2.s and test it
+
+4. write an initialization script for the public ec2 instances
+5. make the template for the public  ec2.s and test it.
+
+6. how to add the ec2.s to target groups automatically when created using auto scale group ?
+7. make the two auto-scale groups and connect the load balancer
+
+

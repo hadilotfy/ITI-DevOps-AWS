@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# install aws
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+yum install -y unzip
+unzip awscliv2.zip 
+./aws/install 
+
+# install nginx
+yum install -y nginx &> /home/ec2-user/install_log_nginx
+
+# remove default configuration
+mv /etc/nginx/nginx.conf /home/ec2-user/
+ 
+# get configuration file from s3 instance
+aws s3 cp   s3://lab4-bucket-html-files/original_nginx.conf /etc/nginx/nginx.conf
+
+# stop selinux  from interfering
+setsebool -P httpd_can_network_connect 1
+
+# run nginx
+systemctl enable --now nginx
+

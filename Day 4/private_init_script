@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# install aws
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+yum install -y unzip
+unzip awscliv2.zip 
+./aws/install 
+
+# install nginx
+yum install -y httpd &> /home/ec2-user/install_log_httpd
+
+# get webpage from s3 bucket
+aws s3 cp   s3://lab4-bucket-html-files/page.html "/var/www/html/status"
+
+
+# run nginx
+systemctl enable --now httpd
+

@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=T4Z7visMM4E             Kubernetes Services explained | ClusterIP vs NodePort vs LoadBalancer vs Headless Service
+https://www.youtube.com/watch?v=GhZi4DxaxxE             Kubernetes Ingress Explained Completely For Beginners - Updated
+https://repost.aws/knowledge-center/eks-api-server-unauthorized-error    Was Really Helpfull
